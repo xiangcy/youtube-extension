@@ -36,6 +36,10 @@ $(function(){
     });
   });
 
-  
+  $(document).on('click', '.delete-icon', function(){
+    var note_div = $(this).closest('tr');
+    note_div.fadeOut();
+    chrome.extension.getBackgroundPage().song_storage.deleteSongs(sval);
+  });
 
 });
