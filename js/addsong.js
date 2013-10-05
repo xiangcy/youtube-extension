@@ -32,7 +32,6 @@ $(function(){
         song_list_div.prepend("<tr><td>" + sval + "</td></tr>");
         chrome.extension.getBackgroundPage().song_storage.saveSongs(sval);
       });
-
     });
   });
 
