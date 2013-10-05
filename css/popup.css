@@ -1,5 +1,5 @@
 body {
-        min-width: 250px;
+        width: 250px;
         overflow-x: hidden;
 }
 #current_song{
