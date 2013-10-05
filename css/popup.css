@@ -17,8 +17,17 @@ body {
 	margin-left: 40px;
 	margin-top: 5px;
 }
-#icons li{
-	padding-left: 15px;
+#icons #ytprev{
+	margin-left: 15px;
+}
+#icons #ytplay{
+	margin-left: 15px;
+}
+#icons #ytpause{
+	margin-left: 15px;
+}
+#icons #ytnext{
+	margin-left: 15px;
 }
 .icon button{
 	padding:0px;
