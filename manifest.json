@@ -16,11 +16,13 @@
   },
 
   "background": {
-    "scripts": ["js/main.js"]
+  	"page": "ytbgplayer.html"
   },
 
   "icons": { "16": "img/youtube_logo.png", 
              "48": "img/youtube_logo.png",
              "128": "img/youtube_logo.png" 
-  }
+  },
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }
