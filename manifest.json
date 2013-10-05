@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "you_key",
-  "description": "The extension helps you to play pieces of music from Youtube"
+  "description": "The extension helps you to play pieces of music from Youtube",
   "version": "1.0",
 
   "permissions": [
@@ -10,7 +10,7 @@
   ],
 
   "browser_action": {
-    "default_icon": "icon.png",
+    "default_icon": "img/icon.png",
     "default_popup": "popup.html"
   }
 
