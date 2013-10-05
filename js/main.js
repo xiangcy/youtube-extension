@@ -1,18 +1,19 @@
 var song_controller = function () {
-  var key_list;
+  var key_list = [];
 
   var that = {};
-  that.initialize = function(){
-    chrome.storage.local.set({
-      "key_list": [],
-    });
-  };
 
   that.loadSongs = function() {
     chrome.storage.local.get({
       "key_list": {},
     }, function(storage) {
-      key_list = storage["key_list"];
+      if( Array.isArray(storage["key_list"]) ){
+        key_list = storage["key_list"];
+      } else {
+        chrome.storage.local.set({
+          "key_list": [],
+        });
+      }
     });
   };
 
