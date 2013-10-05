@@ -15,7 +15,7 @@
   },
 
   "background": {
-    "scripts": []
+    "scripts": ["js/jquery.js", "js/main.js"]
   },
 
   "icons": { "16": "img/youtube_logo.png", 
