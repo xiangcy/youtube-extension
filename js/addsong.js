@@ -1,3 +1,4 @@
+ <tr><td><a href="#">song 1</a><a href="#"><span class="icon-remove"></span></a></td></tr>
 $(function(){
   var song_list_div = $('#songTable');
   var key_list = chrome.extension.getBackgroundPage().song_storage.get_list();
