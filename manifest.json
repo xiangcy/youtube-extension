@@ -6,7 +6,8 @@
   "version": "1.0",
 
   "permissions": [
-    "http://www.youtube.com/*"
+    "http://www.youtube.com/*",
+    "tabs"
   ],
 
   "browser_action": {
