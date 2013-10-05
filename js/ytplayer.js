@@ -1,7 +1,9 @@
-$( "ytplay" ).click(function() {
-  chrome.extension.getBackgroundPage.player.playVideo();
-});
+$(document).ready(function(){    
+	$( "#ytplay" ).click(function() {
+	  chrome.extension.getBackgroundPage().playVideo();
+	});
 
-$( "ytpause" ).click(function() {
-  chrome.extension.getBackgroundPage.player.stopVideo();
+	$( "#ytpause" ).click(function() {
+	  chrome.extension.getBackgroundPage().stopVideo();
+	});
 }); 

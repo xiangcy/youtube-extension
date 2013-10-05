@@ -16,6 +16,14 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
-function onPlayerReady(event) {
+function onPlayerReady(event) { 
   event.target.playVideo();
+}
+
+function playVideo() {
+  player.playVideo();
+}
+
+function stopVideo() {
+  player.stopVideo();
 }
