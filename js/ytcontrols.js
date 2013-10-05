@@ -26,4 +26,13 @@ $(document).ready(function(){
 	  $("#ytpause").hide();
 	  $("#ytplay").show();
 	});
+
+	$( "#ytprev" ).click(function() {
+	  chrome.extension.getBackgroundPage().playPrev();
+	});
+
+	$( "#ytnext" ).click(function() {
+	  chrome.extension.getBackgroundPage().playNext();
+	});
 }); 
+

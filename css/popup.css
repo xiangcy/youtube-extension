@@ -1,6 +1,7 @@
 body {
-        width: 250px;
-        overflow-x: hidden;
+    width: 250px;
+    overflow-x: hidden;
+    font-family: Helvetica, sans-serif;
 }
 #current_song{
 	margin-left: 5px;
@@ -15,6 +16,9 @@ body {
 #icons{
 	margin-left: 40px;
 	margin-top: 5px;
+}
+#icons li{
+	padding-left: 15px;
 }
 .icon button{
 	padding:0px;
