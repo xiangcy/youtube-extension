@@ -1,5 +1,3 @@
-var song_storage;
-
 var song_storage_controller = function () {
   var key_list = [];
 
@@ -32,9 +30,4 @@ var song_storage_controller = function () {
 
   return that;
 };
-
-$(function() {
-  song_storage = song_storage_controller();
-  song_storage.loadSongs();
-});
 
