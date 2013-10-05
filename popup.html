@@ -2,13 +2,6 @@
 <html>
   <head>
     <title>Getting Started Extension's Popup</title>
-    <style>
-      body {
-        min-width: 357px;
-        overflow-x: hidden;
-      }
-
-    </style>
 
     <!--
       - JavaScript and HTML must be in separate files: see our Content Security
@@ -24,21 +17,23 @@
     <script src="js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div><h4>Song Name</h4></div>
-    <div><ul list-style-type:none>
-      <li id="icon"><img src="/img/player_rew.png"></li>
-      <li id="icon"><img src="/img/player_play.png"></li>
-      <li id="icon"><img src="/img/player_pause.png"></li>
-      <li id="icon"><img src="/img/player_fwd.png"></li>
+    <div id="current_song"><h4>Song Name</h4></div>
+    <div id="icons"><ul list-style-type:none>
+      <li id="icon"><button><img src="/img/player_rew.png"></button></li>
+      <li id="icon"><button><img src="/img/player_play.png"></button></li>
+      <li id="icon"><button><img src="/img/player_pause.png"></button></li>
+      <li id="icon"><button><img src="/img/player_fwd.png"></button></li>
     </ul></div>
-    <div><ul list-style-type:circle>
-      <li id="song">Song 1</li>
-      <li id="song">Song 2</li>
-      <li id="song">Song 3</li>
-      <li id="song">Song 4</li>
-      <li id="song">Song 5</li>
-    </ul></div>
-
+    <div><table class="table table-hover">
+      <tr><td>Song 1</td></tr>
+      <tr><td>Song 2</td></tr>
+      <tr><td>Song 3</td></tr>
+      <tr><td>Song 4</td></tr>
+      <tr><td>Song 5</td></tr>
+    </table></div>
+    <div id="add">
+      <button type="button" class="btn btn-primary btn-mini">Add song to your list!</button>
+    </div>
   </body>
 </html>
 

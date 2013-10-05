@@ -1,9 +1,30 @@
 body {
-        min-width: 357px;
+        min-width: 250px;
         overflow-x: hidden;
-      }
-
+}
+#current_song{
+	margin-left: 5px;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
+	border-bottom-color: #C0C0C0;
+}
+#current_song h4{
+	margin-bottom: 3px;
+	font-size: 15px;
+}
+#icons{
+	margin-left: 30px;
+	margin-top: 5px;
+}
+#icon button{
+	padding:0px;
+	border-style:none;
+}
 ul #icon{
 	display:inline
 }
-
+#add{
+	margin-left: 67px;
+	margin-right: 67px;
+	margin-bottom: 5px;
+}
