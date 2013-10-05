@@ -1,6 +1,7 @@
 body {
-        width: 250px;
-        overflow-x: hidden;
+    width: 250px;
+    overflow-x: hidden;
+    font-family: Helvetica, sans-serif;
 }
 #current_song{
 	margin-left: 5px;
