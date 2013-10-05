@@ -1,9 +1,12 @@
- <tr><td><a href="#">song 1</a><a href="#"><span class="icon-remove"></span></a></td></tr>
+var construct_song_div = function (key){
+  return '<tr><td><a class="key_field" href="#">' + key + '</a><span class="icon-remove"></span></td></tr>'
+} 
+ 
 $(function(){
   var song_list_div = $('#songTable');
   var key_list = chrome.extension.getBackgroundPage().song_storage.get_list();
   for (var i = 0; i < key_list.length; i++) {
-    song_list_div.append("<tr><td>" + key_list[i] + "</td></tr>");
+    song_list_div.append(construct_song_div(key_list[i]));
   }
 
   var $addlist = $('#addlist');
@@ -30,17 +33,18 @@ $(function(){
       }
 
       $addlist.click(function(){
-        song_list_div.prepend("<tr><td>" + sval + "</td></tr>");
+        song_list_div.append(construct_song_div(sval));
         chrome.extension.getBackgroundPage().song_storage.saveSongs(sval);
       });
 
     });
   });
 
-  $(document).on('click', '.delete-icon', function(){
-    var note_div = $(this).closest('tr');
-    note_div.fadeOut();
-    chrome.extension.getBackgroundPage().song_storage.deleteSongs(sval);
+  $(document).on('click', '.icon-remove', function(){
+    var song_div = $(this).closest('tr');
+    var key = $(song_div.find(".key_field")[0]).text();
+    song_div.fadeOut();
+    chrome.extension.getBackgroundPage().song_storage.deleteSongs(key);
   });
 
 });
