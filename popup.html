@@ -8,13 +8,6 @@
         overflow-x: hidden;
       }
 
-      img {
-        margin: 5px;
-        border: 2px solid black;
-        vertical-align: middle;
-        width: 75px;
-        height: 75px;
-      }
     </style>
 
     <!--
@@ -23,9 +16,19 @@
       -
       - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
      -->
-    <script src="popup.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/popup.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   </head>
   <body>
+    <div><h4>Song Name</h4></div>
+    <div><ul list-style-type:none>
+      <li><img src="/img/player_rew.png"></li>
+      <li><img src="/img/player_play.png"></li>
+      <li><img src="/img/player_stop.png"></li>
+      <li><img src="/img/player_pause.png"></li>
+      <li><img src="/img/player_fwd.png"></li>
+    </ul></div>
+
   </body>
 </html>
 

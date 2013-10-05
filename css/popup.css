@@ -1,0 +1,12 @@
+body {
+        min-width: 357px;
+        overflow-x: hidden;
+      }
+
+ul{
+	list-style-type:none
+}
+
+ul li{
+	display:inline
+}
