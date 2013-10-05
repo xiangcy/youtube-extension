@@ -9,21 +9,13 @@ function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
     width: '640',
-    videoId: 'lORcpT89t9c',
+    videoId: '6fY0abDtuIU',
     events: {
-      'onReady': onPlayerReady,
-      'onStateChange': onPlayerStateChange
+      'onReady': onPlayerReady
     }
   });
 }
 
 function onPlayerReady(event) {
   event.target.playVideo();
-}
-
-var done = false;
-function onPlayerStateChange(event) {
-  if (event.data == YT.PlayerState.PLAYING && !done) {
-    done = true;
-  }
 }
