@@ -6,6 +6,7 @@
   "version": "1.0",
 
   "permissions": [
+    "storage",
     "http://www.youtube.com/*"
   ],
 
@@ -15,7 +16,7 @@
   },
 
   "background": {
-    "scripts": ["js/jquery.js", "js/main.js"]
+    "scripts": ["js/main.js"]
   },
 
   "icons": { "16": "img/youtube_logo.png", 
