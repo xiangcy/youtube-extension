@@ -23,6 +23,20 @@ body {
 ul #icon{
 	display:inline
 }
+#songTable{
+	margin-bottom:2px;
+}
+#songTable td{
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+#page{
+	margin:0px;
+}
+#page #icon{
+	padding:0px;
+	border-style:none;
+}
 #add{
 	margin-left: 67px;
 	margin-right: 67px;
