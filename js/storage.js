@@ -24,6 +24,15 @@ var song_storage_controller = function () {
     });
   };
 
+  that.deleteSongs = function(key) {
+    for(var i = key_list.length-1;  i >= 0 ; i--){
+      if (key_list[i] === key ) key_list.splice(i, 1);
+    }
+    chrome.storage.local.set({
+      "key_list": key_list,
+    });
+  }
+
   that.get_list = function() {
     return key_list;
   }
