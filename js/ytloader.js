@@ -12,7 +12,7 @@
         player = new YT.Player('player', {
           height: '390',
           width: '640',
-          videoId: 'M7lc1UVf-VE',
+          videoId: 'E9XQ2MdNgKY',
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
@@ -31,7 +31,7 @@
       var done = false;
       function onPlayerStateChange(event) {
         if (event.data == YT.PlayerState.PLAYING && !done) {
-          setTimeout(stopVideo, 6000);
+          // setTimeout(stopVideo, 6000);
           done = true;
         }
       }
