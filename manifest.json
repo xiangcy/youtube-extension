@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "you_key",
+  "description": "The extension helps you to play pieces of music from Youtube",
+  "version": "1.0",
+
+  "permissions": [
+    "http://www.youtube.com/*"
+  ],
+
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "popup.html"
+  }
+
+
+}
