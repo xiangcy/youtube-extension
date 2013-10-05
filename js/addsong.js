@@ -4,11 +4,13 @@ $(function(){
 	chrome.tabs.get(tabID, function(tab){
 		var url=tab.url;
 	});
+	});
 });
-alert(url);
-$("#addlist").click(function(){
-	alert(url);
-});
-});
-	
 
+$(function(){
+  var song_list_div = $('#songTable');
+  var key_list = chrome.extension.getBackgroundPage().song_storage.get_list();
+  for (var i = 0; i < key_list.length; i++) {
+    song_list_div.append("<tr><td>" + key_list[i] + "</td></tr>");
+  }
+});
