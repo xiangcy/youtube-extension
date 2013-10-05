@@ -16,12 +16,34 @@ body {
 	margin-left: 40px;
 	margin-top: 5px;
 }
-#icon button{
+.icon button{
 	padding:0px;
 	border-style:none;
 }
-ul #icon{
-	display:inline
+.icon button .imgLeft{
+	padding-left: 8px;
+	margin-left: 6px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.imgMiddle{
+	padding-left: 7px;
+	margin-left: 7px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+.imgRight{
+	padding-left: 6px;
+	margin-left: 8px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+ul .icon{
+	display:inline;
+}
+.volume{
+	width: 200px;
+	margin-left:25px;
 }
 #table{
 	height:300px;
@@ -61,6 +83,7 @@ ul #icon{
 	position: absolute;
 	top: 3px;
 	left: 215px;
+	cursor:pointer;
 }
 #songTable td{
 	padding-top: 1px;
