@@ -12,7 +12,14 @@
   "browser_action": {
     "default_icon": "img/youtube_logo.png",
     "default_popup": "popup.html"
+  },
+
+  "background": {
+    "scripts": ["js/jquery.js", "js/main.js"]
+  },
+
+  "icons": { "16": "img/youtube_logo.png", 
+             "48": "img/youtube_logo.png",
+             "128": "img/youtube_logo.png" 
   }
-
-
 }
