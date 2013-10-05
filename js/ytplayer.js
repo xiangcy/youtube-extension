@@ -5,6 +5,7 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var player;
+var status = "PAUSED";
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('player', {
     height: '390',
@@ -17,13 +18,19 @@ function onYouTubeIframeAPIReady() {
 }
 
 function onPlayerReady(event) { 
-  event.target.playVideo();
+  playVideo();
 }
 
 function playVideo() {
   player.playVideo();
+  status = "PLAYING";
 }
 
 function stopVideo() {
   player.stopVideo();
+  status = "PAUSED";
+}
+
+function getStatus() {
+  return status;
 }
