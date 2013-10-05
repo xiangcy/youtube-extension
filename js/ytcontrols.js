@@ -7,7 +7,13 @@ $(document).ready(function(){
 	if(chrome.extension.getBackgroundPage().getStatus() == "PLAYING"){
 	  $("#ytplay").hide();
 	  $("#ytpause").show();
-	}	
+	}
+
+	$( "#ytvolume" ).val(chrome.extension.getBackgroundPage().getPlayer().getVolume());
+
+	$( "#ytvolume" ).change(function() {
+	  chrome.extension.getBackgroundPage().getPlayer().setVolume($( "#ytvolume" ).val());
+	});	
 
 	$( "#ytplay" ).click(function() {
 	  chrome.extension.getBackgroundPage().playVideo();
