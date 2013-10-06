@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
 
-  "name": "you_key",
-  "description": "The extension helps you to play pieces of music from Youtube",
+  "name": "Tipatos",
+  "description": "Queue, sort, and listen to music from Youtube conveniently through this browser extension!",
   "version": "1.0",
 
   "permissions": [

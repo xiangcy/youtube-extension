@@ -87,7 +87,7 @@ $(document).ready( function() {
 		var curKey = chrome.extension.getBackgroundPage().nowPlaying();
 
 		if (tsec == 0) {
-			$("#bigtitle").text("This video is copyright protected and cannot be played here :[");
+			$("#bigtitle").text("Video cannot be loaded - hit play to try again, or perhaps the video is copyrighted.");
 			$("#elapsedtime").text("No video");
 			$("#totaltime").text("interest here :[");
 

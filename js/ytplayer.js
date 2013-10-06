@@ -25,6 +25,7 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) { 
   if(song_storage.get_list().length > 0) {
     playSpec(song_storage.get_list()[0]);
+    stopVideo();
   } else {
     //do nothing, no video
   }
