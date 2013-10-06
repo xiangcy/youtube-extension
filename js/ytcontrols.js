@@ -84,10 +84,28 @@ $(document).ready( function() {
     	esec = chrome.extension.getBackgroundPage().getPlayer().getCurrentTime();
 		tsec = chrome.extension.getBackgroundPage().getPlayer().getDuration();
 
+		var curKey = chrome.extension.getBackgroundPage().nowPlaying();
+
+		if (tsec == 0) {
+			$("#bigtitle").text("This video is copyright protected and cannot be played here :[");
+			$("#elapsedtime").text("No video");
+			$("#totaltime").text("interest here :[");
+
+		  	for ( ii = 0; ii < chrome.extension.getBackgroundPage().song_storage.get_list().length; ii++){
+		  	  key = chrome.extension.getBackgroundPage().song_storage.get_list()[ii];
+		  	  if( key == curKey) {
+			  	$("#song"+key).parent("td").parent("tr").css("background-color","red");
+			  }
+			  else {
+			  	$("#song"+key).parent("td").parent("tr").css("background-color","white");
+			  }
+		  	}
+		  	return;
+		}
+
+
 		$("#elapsedtime").text(Math.floor(esec/60) + ":" + pad(Math.floor(esec%60),2));
 		$("#totaltime").text(Math.floor(tsec/60) + ":" + pad(Math.floor(tsec%60),2));
-
-		var curKey = chrome.extension.getBackgroundPage().nowPlaying();
 
 		var url = "http://gdata.youtube.com/feeds/api/videos/" + curKey + "?v=2&alt=jsonc";
 	  	var output;
