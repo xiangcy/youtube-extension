@@ -5,6 +5,7 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var i = 0;
+var shuffle = false;
 
 var player;
 var status = "PAUSED";
@@ -22,7 +23,7 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) { 
   if(song_storage.get_list().length > 0) {
-    player.loadVideoById(song_storage.get_list()[0]);
+    playSpec(0);
   } else {
     playVideo();
   }
@@ -46,9 +47,12 @@ function stopVideo() {
 
 function playNext() {
   if(song_storage.get_list().length > 0) {
-    i = (song_storage.get_list().length + i + 1) % song_storage.get_list().length;
-    player.loadVideoById(song_storage.get_list()[i]);
-    status = "PLAYING";
+    if(!shuffle){
+      i = (song_storage.get_list().length + i + 1) % song_storage.get_list().length;
+    } else {
+      i = Math.floor(Math.random() * song_storage.get_list().length);
+    }
+    playSpec(i);
   }
   else {
     playVideo();
@@ -57,13 +61,26 @@ function playNext() {
 
 function playPrev() {
   if(song_storage.get_list().length > 0) {
-    i = (song_storage.get_list().length + i - 1) % song_storage.get_list().length;
-    player.loadVideoById(song_storage.get_list()[i]);
-    status = "PLAYING";
+    if(!shuffle){
+      i = (song_storage.get_list().length + i + 1) % song_storage.get_list().length;
+    } else {
+      i = Math.floor(Math.random() * song_storage.get_list().length);
+    }
+    playSpec(i);
   }
   else {
     playVideo();
   }
+}
+
+function playSpec(index){
+    i = index;
+    player.loadVideoById(song_storage.get_list()[i]);
+    status = "PLAYING";
+}
+
+function toggleShuffle(){
+  shuffle = !shuffle;
 }
 
 function getPlayer() {
