@@ -126,6 +126,6 @@ $(document).ready( function() {
 	}
 
 	update();
-	setInterval(update, 500);
+	setInterval(update, 300);
 });
 
