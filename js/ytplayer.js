@@ -79,6 +79,10 @@ function playSpec(index){
     status = "PLAYING";
 }
 
+function shuffleState(){
+  return shuffle;
+}
+
 function toggleShuffle(){
   shuffle = !shuffle;
 }

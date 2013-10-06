@@ -9,7 +9,9 @@
       -
       - [1]: http://developer.chrome.com/extensions/contentSecurityPolicy.html
      -->
+
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+
     <link rel="stylesheet" type="text/css" href="/css/popup.css">
     <link rel="stylesheet" type="text/css" href="/css/playlist.css">
     <script src="js/jquery.js"></script>
@@ -19,7 +21,7 @@
     <script src="js/storage.js"></script>
     <script src="js/ytplayer.js"></script>
     <script src="js/ytcontrols.js"></script>
-
+    <script src="js/playlist.js"></script>
   </head>
   <body>
     <div id="current_song">
@@ -27,14 +29,22 @@
       <span id="elapsedtime">0:00</span> of <span id="totaltime">X:XX</span>
     </div>
     <div id="icons"><ul list-style-type:none>
-      <li class="icon"><button class="btn btn-primary btn-large transparent" id="ytprev"><img src="/img/prev.png"></img></button></li>
-      <li class="icon"><button class="btn btn-primary btn-large transparent" id="ytplay"><img src="/img/play.png"></img></button></li>
-      <li class="icon"><button class="btn btn-primary btn-large transparent" id="ytpause"><img src="/img/pause.png"></img></button></li>
-      <li class="icon"><button class="btn btn-primary btn-large transparent" id="ytnext"><img src="/img/next.png"></img></button></li>
-      <li class="icon"><button class="btn btn-primary btn-large transparent" id="ytshuffle"><img src="/img/shuffle.png"></img></button></li>
+      <li class="icon"><button class="transparent" id="ytprev"><img src="/img/prev.png" width=30px></img></button></li>
+      <li class="icon"><button class="transparent" id="ytplay"><img src="/img/play.png"></img></button></li>
+      <li class="icon"><button class="transparent" id="ytpause"><img src="/img/pause.png"></img></button></li>
+      <li class="icon"><button class="transparent" id="ytnext"><img src="/img/next.png" width=30px></img></button></li>
+      <li class="icon"><button class="transparent" id="ytshuffle"><img src="/img/shuffle.png"></img></button></li>
+      <li class="icon"><button class="transparent" id="ytshufflet"><img src="/img/shuffle-toggled.png"></img></button></li>
     </div>
     <div class="volume">
       <input id="ytvolume" type="range" min="1" max="100"></input>
+    </div>
+    <div class="playlists dropdown">
+      <a href="#" class="storelist" role="button" data-toggle:"dropdown">Stored Lists</a>
+      <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+        <li><a href="#" class="playlist">StoredList 1</a></li>
+        <li><a href="#" class="playlist">StoredList 2</a></li>
+      </ul>
     </div>
     <div id="table">
       <table class="table table-hover" id="songTable">
@@ -43,9 +53,14 @@
       </table>
     </div>
     <div id="add"><ul class="button-list">
-      <li><button id="addlist" type="button" class="btn btn-primary btn-mini">Add to your list!</button></li>
-      <li><button type="button" class="savelist">Save list</button></li>
+      <li><button id="addlist" type="button" class="btn btn-primary btn-mini transparent">Add to your list!</button></li>
+      <li><button type="button" class="savelist transparent">Save list</button></li>
     </ul></div>
+    <div class="listname">
+      <label>name</label>
+      <input type="text" class="input">
+      <button type="submit">Submit</button>
+    </div>
   </body>
 </html>
 
