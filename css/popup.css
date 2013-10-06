@@ -121,5 +121,8 @@ ul .icon{
 	background-color:transparent;
 	border:0px solid blue;
 	border-bottom-color:transparent;
-	
+}
+
+.transparent:focus{
+	outline: none;
 }
