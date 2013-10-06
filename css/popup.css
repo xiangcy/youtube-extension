@@ -116,7 +116,9 @@ ul .icon{
 	margin-bottom: 5px;
 	margin-top:5px;
 }
-
+.key_field{
+	display: none;
+}
 .transparent{
 	background-color:transparent;
 	border:0px solid blue;
