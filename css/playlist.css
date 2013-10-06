@@ -1,0 +1,15 @@
+.playlists ul{
+	list-style-type: none;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 5px;
+	margin-top:5px;
+}
+.playlists li{
+	border-bottom-width: 1px;
+	border-bottom-color: #C0C0C0;
+	border-bottom-style: solid;
+}
+.playlists .playlist:hover{
+	text-decoration: none;
+}
