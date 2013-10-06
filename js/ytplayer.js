@@ -4,8 +4,9 @@ tag.src = "js/api_yt_iframe.js";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var i = -1;
 var shuffle = false;
+
+curKey = 'E9XQ2MdNgKY';
 
 var player;
 var status = "PAUSED";
@@ -23,9 +24,9 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) { 
   if(song_storage.get_list().length > 0) {
-    playSpec(0);
+    playSpec(song_storage.get_list()[0]);
   } else {
-    playVideo();
+    //do nothing, no video
   }
 }
 
@@ -45,37 +46,48 @@ function stopVideo() {
   status = "PAUSED";
 }
 
+function getCurrentIndex() {
+  for (ii = 0; ii < song_storage.get_list().length; ii++){
+    if (song_storage.get_list()[ii] == curKey){
+      return ii;
+    }
+  }
+  return 0;
+}
+
 function playNext() {
   if(song_storage.get_list().length > 0) {
     if(!shuffle){
+      i = getCurrentIndex();
       i = (song_storage.get_list().length + i + 1) % song_storage.get_list().length;
     } else {
       i = Math.floor(Math.random() * song_storage.get_list().length);
     }
-    playSpec(i);
+    playSpec(song_storage.get_list()[i]);
   }
   else {
-    playVideo();
+    //do nothing
   }
 }
 
 function playPrev() {
   if(song_storage.get_list().length > 0) {
     if(!shuffle){
-      i = (song_storage.get_list().length + i + 1) % song_storage.get_list().length;
+      i = getCurrentIndex();
+      i = (song_storage.get_list().length + i - 1) % song_storage.get_list().length;
     } else {
       i = Math.floor(Math.random() * song_storage.get_list().length);
     }
-    playSpec(i);
+    playSpec(song_storage.get_list()[i]);
   }
   else {
-    playVideo();
+    //do nothing
   }
 }
 
-function playSpec(index){
-    i = index;
-    player.loadVideoById(song_storage.get_list()[i]);
+function playSpec(key){
+    curKey = key;
+    player.loadVideoById(key);
     status = "PLAYING";
 }
 
@@ -92,7 +104,7 @@ function getPlayer() {
 }
 
 function nowPlaying() {
-  return i;
+  return curKey;
 }
 
 function getStatus() {
