@@ -96,7 +96,7 @@ ul .icon{
 }
 #songTable td a:hover{
 	text-decoration: none;
-	color:blue;
+	color:rgb(30,147,215);
 }
 .button-list{
 	list-style-type: none;
