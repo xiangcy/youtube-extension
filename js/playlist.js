@@ -1,5 +1,6 @@
-$(function(){
-	$(".savelist").click(){
-
-	}
+$(document).ready(function(){
+	$(".savelist").click(function(){
+		$(".listname").show();
+	});
 });
+	

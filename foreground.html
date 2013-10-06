@@ -21,7 +21,7 @@
     <script src="js/storage.js"></script>
     <script src="js/ytplayer.js"></script>
     <script src="js/ytcontrols.js"></script>
-    <script src="js/playlist.js"></script>
+  
   </head>
   <body>
     <div id="current_song">
@@ -39,11 +39,9 @@
     <div class="volume">
       <input id="ytvolume" type="range" min="1" max="100"></input>
     </div>
-    <div class="playlists">
-      <select>
-
-      </select>
-    </div>
+    <!-- <div class="playlists">
+      <label><select></select></label>
+    </div> -->
     <div id="table">
       <table class="table table-hover" id="songTable">
         <tbody class="table-body"> 
@@ -52,9 +50,9 @@
     </div>
     <div id="add"><ul class="button-list">
       <li><button id="addlist" type="button" class="btn btn-primary btn-mini transparent">Add to your list!</button></li>
-      <li><button type="button" class="savelist transparent">Save list</button></li>
+      <!-- <li><button type="button" class="savelist transparent">Save list</button></li> -->
     </ul></div>
-    <form class="form-inline listname">
+<!--     <form class="form-inline listname">
       <div>
         <label>Name: </label>
       </div>
@@ -62,7 +60,7 @@
         <input type="text" class="input">
       </div>
       <div><button type="submit">Submit</button></div>
-      </form>
+      </form> -->
     </div>
   </body>
 </html>

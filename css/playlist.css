@@ -9,7 +9,7 @@
 	text-decoration: none;
 }
 .listname{
-	visibility: hidden;
+	display: none;
 }
 .listname div{
 	display: inline-block;
@@ -17,3 +17,4 @@
 .listname input{
 	width:100px;
 }
+
