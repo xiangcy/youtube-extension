@@ -29,10 +29,14 @@ $(document).ready(function(){
 
 	$( "#ytprev" ).click(function() {
 	  chrome.extension.getBackgroundPage().playPrev();
+  	  $("#ytplay").hide();
+	  $("#ytpause").show();
 	});
 
 	$( "#ytnext" ).click(function() {
 	  chrome.extension.getBackgroundPage().playNext();
+  	  $("#ytplay").hide();
+	  $("#ytpause").show();
 	});
 }); 
 
