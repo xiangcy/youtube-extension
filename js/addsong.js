@@ -46,8 +46,12 @@ $(function(){
       }
 
       $addlist.click(function(){
-        song_list_div.append(construct_song_div(sval));
-        chrome.extension.getBackgroundPage().song_storage.saveSongs(sval);
+        if ($.inArray(sval, chrome.extension.getBackgroundPage().song_storage.get_list()) !== -1) {
+          $(".alert").fadeIn(500).fadeOut(3000);
+        } else {
+          song_list_div.append(construct_song_div(sval));
+          chrome.extension.getBackgroundPage().song_storage.saveSongs(sval);
+        }
       });
     });
   });
