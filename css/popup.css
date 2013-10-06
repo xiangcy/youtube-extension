@@ -50,6 +50,7 @@ ul .icon{
 	height:300px;
 	overflow-y: auto;
 	overflow-x:hidden;
+	position: relative;
 }
 /* Let's get this party started */
 ::-webkit-scrollbar {
@@ -67,7 +68,8 @@ ul .icon{
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: -webkit-linear-gradient(top, rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,rgba(200,215,220,1) 100%); 
+    background: -webkit-linear-gradient(top, rgba(242,245,246,1) 0%,rgba(227,234,237,1) 37%,
+    	rgba(200,215,220,1) 100%); 
     /*background: #006dcc; 
     background-image: -webkit-linear-gradient(top, #0088cc, #0044cc);
     background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#0088cc), to(#0044cc));*/
@@ -131,4 +133,8 @@ ul .icon{
 .addlist:hover{
 	background: -webkit-linear-gradient(top, rgba(238,238,238,1) 0%,rgba(238,238,238,1) 100%); 
 	color: black;
+}
+.alert{
+	color:red;
+	display:none;
 }
