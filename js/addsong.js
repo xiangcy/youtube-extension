@@ -51,6 +51,11 @@ $(function(){
         } else {
           song_list_div.append(construct_song_div(sval));
           chrome.extension.getBackgroundPage().song_storage.saveSongs(sval);
+          
+          $( ".title_field" ).click(function() {
+            var key = $(this).attr('id').replace(/song/, '');
+            chrome.extension.getBackgroundPage().playSpec(key);
+          });
         }
       });
     });
