@@ -18,16 +18,15 @@ body {
 	margin-top: 5px;
 }
 #icons #ytprev{
-	margin-left: 15px;
+	margin-left: 0px;
 }
 #icons #ytplay{
-	margin-left: 15px;
+	margin-left: 0px;
 }
 #icons #ytpause{
-	margin-left: 15px;
+	margin-left: 0px;
 }
 #icons #ytnext{
-	margin-left: 15px;
 }
 .icon button{
 	padding:0px;
@@ -116,4 +115,11 @@ ul .icon{
 	margin-right: 67px;
 	margin-bottom: 5px;
 	margin-top:5px;
+}
+
+.transparent{
+	background-color:transparent;
+	border:0px solid blue;
+	border-bottom-color:transparent;
+	
 }
