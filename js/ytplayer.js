@@ -4,7 +4,7 @@ tag.src = "js/api_yt_iframe.js";
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var i = 0;
+var i = -1;
 var shuffle = false;
 
 var player;
@@ -85,6 +85,10 @@ function toggleShuffle(){
 
 function getPlayer() {
   return player
+}
+
+function nowPlaying() {
+  return i;
 }
 
 function getStatus() {
