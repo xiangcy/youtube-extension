@@ -92,7 +92,7 @@ $(document).ready( function() {
 
 	  	  for ( ii = 0; ii < chrome.extension.getBackgroundPage().song_storage.get_list().length; ii++){
 	  	  	if( ii == curIndex) {
-		  	  	$("#song"+ii).parent("td").parent("tr").css("background-color","grey");
+		  	  	$("#song"+ii).parent("td").parent("tr").css("background-color","#ddd");
 		  	}
 		  	else {
 		  		$("#song"+ii).parent("td").parent("tr").css("background-color","white");
