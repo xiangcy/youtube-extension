@@ -1,12 +1,18 @@
-var getTitle=function(url){
+var getTitle=function(key, song_div){
+  var url = "http://gdata.youtube.com/feeds/api/videos/" + key + "?v=2&alt=jsonc";
   var output;
   $.getJSON(url,function(json){
     output=json.data.title;
-    return output;
+    song_div.find('.title_field').text(output);   
   });
+  return output;
 };
+
 var construct_song_div = function (key){
-  return '<tr><td><a class="key_field" href="#">' + key + '</a><span class="icon-remove"></span></td></tr>'
+  var song_div = $('<tr><td><a class="key_field" href="#">' + key + '</a>' + '<a class="title_field" href="#">' 
+          + '' + '</a><span class="icon-remove"></span></td></tr>');
+  var title = getTitle(key, song_div);
+  return song_div;
 };
  
 $(function(){
