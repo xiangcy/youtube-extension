@@ -17,17 +17,6 @@ body {
 	margin-left: 40px;
 	margin-top: 5px;
 }
-#icons #ytprev{
-	margin-left: 0px;
-}
-#icons #ytplay{
-	margin-left: 0px;
-}
-#icons #ytpause{
-	margin-left: 0px;
-}
-#icons #ytnext{
-}
 .icon button{
 	padding:0px;
 	border-style:none;
@@ -126,4 +115,7 @@ ul .icon{
 
 .transparent:focus{
 	outline: none;
+	outline-color: transparent;
+	outline-style: auto;
+	outline-width: 0px;
 }
