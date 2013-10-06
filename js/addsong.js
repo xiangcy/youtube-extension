@@ -66,7 +66,9 @@ $(function(){
     var key = $(song_div.find(".key_field")[0]).text();
     song_div.fadeOut();
     chrome.extension.getBackgroundPage().song_storage.deleteSongs(key);
-    chrome.extension.getBackgroundPage().playNext();
+    if (key == chrome.extension.getBackgroundPage().nowPlaying()) {
+      chrome.extension.getBackgroundPage().playNext();
+    }
   });
 
   song_list_div.sortable({
