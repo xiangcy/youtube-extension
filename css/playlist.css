@@ -8,6 +8,9 @@
 .playlists .playlist:hover{
 	text-decoration: none;
 }
+.listname{
+	visibility: hidden;
+}
 .listname div{
 	display: inline-block;
 }

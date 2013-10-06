@@ -1,3 +1,5 @@
 $(function(){
-	$(".storelist").dropdown();
+	$(".savelist").click(){
+
+	}
 });
