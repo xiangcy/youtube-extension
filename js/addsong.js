@@ -52,6 +52,10 @@ $(function(){
           song_list_div.append(construct_song_div(sval));
           chrome.extension.getBackgroundPage().song_storage.saveSongs(sval);
 
+          if(chrome.extension.getBackgroundPage().song_storage.get_list().length == 1){
+            chrome.extension.getBackgroundPage().playNext();
+          }
+
           $( ".title_field" ).click(function() {
             var key = $(this).attr('id').replace(/song/, '');
             chrome.extension.getBackgroundPage().playSpec(key);
