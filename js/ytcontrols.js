@@ -42,5 +42,10 @@ $(document).ready(function(){
 	$( "#ytshuffle" ).click(function() {
 	  chrome.extension.getBackgroundPage().toggleShuffle();
 	});
+
+	$( ".title_field" ).click(function() {
+	  var index = $(this).attr('id').replace(/song/, '');
+	  chrome.extension.getBackgroundPage().playSpec(index);
+	});
 }); 
 

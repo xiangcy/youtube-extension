@@ -52,8 +52,7 @@ function playNext() {
     } else {
       i = Math.floor(Math.random() * song_storage.get_list().length);
     }
-    player.loadVideoById(song_storage.get_list()[i]);
-    status = "PLAYING";
+    playSpec(i);
   }
   else {
     playVideo();
@@ -67,16 +66,17 @@ function playPrev() {
     } else {
       i = Math.floor(Math.random() * song_storage.get_list().length);
     }
-    player.loadVideoById(song_storage.get_list()[i]);
-    status = "PLAYING";
+    playSpec(i);
   }
   else {
     playVideo();
   }
 }
 
-function playSpec(key){
-  //play specific thing (by clicking )
+function playSpec(index){
+    i = index;
+    player.loadVideoById(song_storage.get_list()[i]);
+    status = "PLAYING";
 }
 
 function toggleShuffle(){

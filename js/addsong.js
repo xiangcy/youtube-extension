@@ -8,8 +8,8 @@ var getTitle=function(key, song_div){
   return output;
 };
 
-var construct_song_div = function (key){
-  var song_div = $('<tr><td><a class="key_field" href="#">' + key + '</a>' + '<a class="title_field" href="#">' 
+var construct_song_div = function (key, number){
+  var song_div = $('<tr><td><a class="key_field" href="#">' + key + '</a>' + '<a id="song' + number + '" class="title_field" href="#">' 
           + '' + '</a><span class="icon-remove"></span></td></tr>');
   var title = getTitle(key, song_div);
   return song_div;
@@ -19,7 +19,7 @@ $(function(){
   var song_list_div = $('.table-body');
   var key_list = chrome.extension.getBackgroundPage().song_storage.get_list();
   for (var i = 0; i < key_list.length; i++) {
-    song_list_div.append(construct_song_div(key_list[i]));
+    song_list_div.append(construct_song_div(key_list[i], i));
   }
 
   var $addlist = $('#addlist');
