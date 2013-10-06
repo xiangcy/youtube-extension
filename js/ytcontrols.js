@@ -9,6 +9,16 @@ $(document).ready(function(){
 	  $("#ytpause").show();
 	}
 
+	if(chrome.extension.getBackgroundPage().shuffleState()){
+	  $("#ytshuffle").hide();
+	  $("#ytshufflet").show();	
+	}
+
+	if(!chrome.extension.getBackgroundPage().shuffleState()){
+	  $("#ytshufflet").hide();
+	  $("#ytshuffle").show();	
+	}
+
 	$( "#ytvolume" ).val(chrome.extension.getBackgroundPage().getPlayer().getVolume());
 
 	$( "#ytvolume" ).change(function() {
@@ -41,6 +51,14 @@ $(document).ready(function(){
 
 	$( "#ytshuffle" ).click(function() {
 	  chrome.extension.getBackgroundPage().toggleShuffle();
+	  $("#ytshuffle").hide();
+	  $("#ytshufflet").show();
+	});
+
+	$( "#ytshufflet" ).click(function() {
+	  chrome.extension.getBackgroundPage().toggleShuffle();
+	  $("#ytshufflet").hide();
+	  $("#ytshuffle").show();
 	});
 
 	$( ".title_field" ).click(function() {
