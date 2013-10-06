@@ -5,11 +5,15 @@
 	margin-bottom: 5px;
 	margin-top:5px;
 }
-.playlists li{
-	border-bottom-width: 1px;
-	border-bottom-color: #C0C0C0;
-	border-bottom-style: solid;
-}
 .playlists .playlist:hover{
 	text-decoration: none;
+}
+.listname{
+	visibility: hidden;
+}
+.listname div{
+	display: inline-block;
+}
+.listname input{
+	width:100px;
 }
