@@ -109,14 +109,15 @@ ul .icon{
 	text-decoration: none;
 	color:blue;
 }
-
-#add{
-	margin-left: 67px;
-	margin-right: 67px;
-	margin-bottom: 5px;
-	margin-top:5px;
+.button-list{
+	list-style-type: none;
 }
-
+.button-list li{
+	display: inline;
+}
+.key_field{
+	display: none;
+}
 .transparent{
 	background-color:transparent;
 	border:0px solid blue;
