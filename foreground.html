@@ -12,6 +12,7 @@
     <link rel="stylesheet" type="text/css" href="/css/popup.css">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/addsong.js"></script>
@@ -22,14 +23,20 @@
   <body>
     <div id="current_song"><h4>Song Name</h4></div>
     <div id="icons"><ul list-style-type:none>
-      <li id="icon"><button id = "ytprev"><img src="/img/player_rew.png"></button></li>
-      <li id="icon"><button id = "ytplay"><img src="/img/player_play.png"></button></li>
-      <li id="icon"><button id = "ytpause"><img src="/img/player_pause.png"></button></li>
-      <li id="icon"><button id = "ytnext"><img src="/img/player_fwd.png"></button></li>
+      <li class="icon"><button class="btn btn-primary btn-large" id="ytprev"><span class="imgLeft icon-white icon-backward"></span></button></li>
+      <li class="icon"><button class="btn btn-primary btn-large" id = "ytplay"><span class="imgMiddle icon-white icon-play"></span></button></li>
+      <li class="icon"><button class="btn btn-primary btn-large" id = "ytpause"><span class="imgMiddle icon-white icon-pause"></span></button></li>
+      <li class="icon"><button class="btn btn-primary btn-large" id = "ytnext"><span class="imgRight icon-white icon-forward"></span></button></li>
     </div>
-    <input id="ytvolume" type="range" min="1" max="100"></input>
-    <div id="table"><table class="table table-hover" id="songTable">
-    </table></div>
+    <div class="volume">
+      <input id="ytvolume" type="range" min="1" max="100"></input>
+    </div>
+    <div id="table">
+      <table class="table table-hover" id="songTable">
+        <tbody class="table-body"> 
+        </tbody>
+      </table>
+    </div>
     <div id="add">
       <button id="addlist" type="button" class="btn btn-primary btn-mini">Add to your list!</button>
     </div>

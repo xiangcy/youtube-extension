@@ -3,7 +3,7 @@ var construct_song_div = function (key){
 } 
  
 $(function(){
-  var song_list_div = $('#songTable');
+  var song_list_div = $('.table-body');
   var key_list = chrome.extension.getBackgroundPage().song_storage.get_list();
   for (var i = 0; i < key_list.length; i++) {
     song_list_div.append(construct_song_div(key_list[i]));
@@ -44,6 +44,16 @@ $(function(){
     var key = $(song_div.find(".key_field")[0]).text();
     song_div.fadeOut();
     chrome.extension.getBackgroundPage().song_storage.deleteSongs(key);
+  });
+
+  song_list_div.sortable({
+    update: function() {
+      var new_key_list = [];
+      $(".key_field").each(function() {
+        new_key_list.push($(this).text());
+        chrome.extension.getBackgroundPage().song_storage.reset(new_key_list);
+      });
+    }
   });
 
 });
