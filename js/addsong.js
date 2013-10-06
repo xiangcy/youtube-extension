@@ -1,6 +1,13 @@
+var getTitle=function(url){
+  var output;
+  $.getJSON(url,function(json){
+    output=json.data.title;
+    return output;
+  });
+};
 var construct_song_div = function (key){
   return '<tr><td><a class="key_field" href="#">' + key + '</a><span class="icon-remove"></span></td></tr>'
-} 
+};
  
 $(function(){
   var song_list_div = $('.table-body');
