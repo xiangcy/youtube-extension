@@ -64,6 +64,8 @@ $(document).ready(function(){
 	$( ".title_field" ).click(function() {
 	  var key = $(this).attr('id').replace(/song/, '');
 	  chrome.extension.getBackgroundPage().playSpec(key);
+	  $("#ytplay").hide();
+	  $("#ytpause").show();
 	});
 }); 
 
