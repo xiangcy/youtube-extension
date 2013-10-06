@@ -79,14 +79,25 @@ $(document).ready( function() {
 		$("#elapsedtime").text(Math.floor(esec/60) + ":" + pad(Math.floor(esec%60),2));
 		$("#totaltime").text(Math.floor(tsec/60) + ":" + pad(Math.floor(tsec%60),2));
 
-		if(chrome.extension.getBackgroundPage().nowPlaying() >= 0){
-		  curKey = chrome.extension.getBackgroundPage().song_storage.get_list()[chrome.extension.getBackgroundPage().nowPlaying()];
+		var curIndex = chrome.extension.getBackgroundPage().nowPlaying();
+
+		if(curIndex >= 0){
+		  curKey = chrome.extension.getBackgroundPage().song_storage.get_list()[curIndex];
 		  var url = "http://gdata.youtube.com/feeds/api/videos/" + curKey + "?v=2&alt=jsonc";
 	  	  var output;
 	  	  $.getJSON(url,function(json){
 	      	output=json.data.title;
 	      	$("#bigtitle").text(output);   
 	  	  });
+
+	  	  for ( ii = 0; ii < chrome.extension.getBackgroundPage().song_storage.get_list().length; ii++){
+	  	  	if( ii == curIndex) {
+		  	  	$("#song"+ii).parent("td").parent("tr").css("background-color","grey");
+		  	}
+		  	else {
+		  		$("#song"+ii).parent("td").parent("tr").css("background-color","white");
+		  	}
+	  	  }
 		}
 	}
 
