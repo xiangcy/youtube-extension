@@ -5,6 +5,7 @@ var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 var i = 0;
+var shuffle = false;
 
 var player;
 var status = "PAUSED";
@@ -46,7 +47,11 @@ function stopVideo() {
 
 function playNext() {
   if(song_storage.get_list().length > 0) {
-    i = (song_storage.get_list().length + i + 1) % song_storage.get_list().length;
+    if(!shuffle){
+      i = (song_storage.get_list().length + i + 1) % song_storage.get_list().length;
+    } else {
+      i = Math.floor(Math.random() * song_storage.get_list().length);
+    }
     player.loadVideoById(song_storage.get_list()[i]);
     status = "PLAYING";
   }
@@ -57,13 +62,25 @@ function playNext() {
 
 function playPrev() {
   if(song_storage.get_list().length > 0) {
-    i = (song_storage.get_list().length + i - 1) % song_storage.get_list().length;
+    if(!shuffle){
+      i = (song_storage.get_list().length + i + 1) % song_storage.get_list().length;
+    } else {
+      i = Math.floor(Math.random() * song_storage.get_list().length);
+    }
     player.loadVideoById(song_storage.get_list()[i]);
     status = "PLAYING";
   }
   else {
     playVideo();
   }
+}
+
+function playSpec(key){
+  //play specific thing (by clicking )
+}
+
+function toggleShuffle(){
+  shuffle = !shuffle;
 }
 
 function getPlayer() {

@@ -38,5 +38,9 @@ $(document).ready(function(){
   	  $("#ytplay").hide();
 	  $("#ytpause").show();
 	});
+
+	$( "#ytshuffle" ).click(function() {
+	  chrome.extension.getBackgroundPage().toggleShuffle();
+	});
 }); 
 
