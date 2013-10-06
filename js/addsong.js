@@ -51,7 +51,7 @@ $(function(){
         } else {
           song_list_div.append(construct_song_div(sval));
           chrome.extension.getBackgroundPage().song_storage.saveSongs(sval);
-          
+
           $( ".title_field" ).click(function() {
             var key = $(this).attr('id').replace(/song/, '');
             chrome.extension.getBackgroundPage().playSpec(key);
@@ -66,6 +66,7 @@ $(function(){
     var key = $(song_div.find(".key_field")[0]).text();
     song_div.fadeOut();
     chrome.extension.getBackgroundPage().song_storage.deleteSongs(key);
+    chrome.extension.getBackgroundPage().playNext();
   });
 
   song_list_div.sortable({
