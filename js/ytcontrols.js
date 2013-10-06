@@ -67,3 +67,30 @@ $(document).ready(function(){
 	});
 }); 
 
+$(document).ready( function() {
+	function pad (time, max) {
+	  return time.toString().length < max ? pad("0" + time.toString(), max) : time.toString();
+	}
+
+	var update = function() {
+    	esec = chrome.extension.getBackgroundPage().getPlayer().getCurrentTime();
+		tsec = chrome.extension.getBackgroundPage().getPlayer().getDuration();
+
+		$("#elapsedtime").text(Math.floor(esec/60) + ":" + pad(Math.floor(esec%60),2));
+		$("#totaltime").text(Math.floor(tsec/60) + ":" + pad(Math.floor(tsec%60),2));
+
+		if(chrome.extension.getBackgroundPage().nowPlaying() >= 0){
+		  curKey = chrome.extension.getBackgroundPage().song_storage.get_list()[chrome.extension.getBackgroundPage().nowPlaying()];
+		  var url = "http://gdata.youtube.com/feeds/api/videos/" + curKey + "?v=2&alt=jsonc";
+	  	  var output;
+	  	  $.getJSON(url,function(json){
+	      	output=json.data.title;
+	      	$("#bigtitle").text(output);   
+	  	  });
+		}
+	}
+
+	update();
+	setInterval(update, 500);
+});
+
