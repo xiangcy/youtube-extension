@@ -62,8 +62,8 @@ $(document).ready(function(){
 	});
 
 	$( ".title_field" ).click(function() {
-	  var index = $(this).attr('id').replace(/song/, '');
-	  chrome.extension.getBackgroundPage().playSpec(index);
+	  var key = $(this).attr('id').replace(/song/, '');
+	  chrome.extension.getBackgroundPage().playSpec(key);
 	});
 }); 
 
@@ -73,32 +73,38 @@ $(document).ready( function() {
 	}
 
 	var update = function() {
+		if (chrome.extension.getBackgroundPage().song_storage.get_list().length == 0){
+			chrome.extension.getBackgroundPage().stopVideo();
+			$("#bigtitle").text("No videos in list - click me when watching a YouTube video!");
+			$("#elapsedtime").text("No video");
+			$("#totaltime").text("interest here :[");
+			return;
+		}
+
     	esec = chrome.extension.getBackgroundPage().getPlayer().getCurrentTime();
 		tsec = chrome.extension.getBackgroundPage().getPlayer().getDuration();
 
 		$("#elapsedtime").text(Math.floor(esec/60) + ":" + pad(Math.floor(esec%60),2));
 		$("#totaltime").text(Math.floor(tsec/60) + ":" + pad(Math.floor(tsec%60),2));
 
-		var curIndex = chrome.extension.getBackgroundPage().nowPlaying();
+		var curKey = chrome.extension.getBackgroundPage().nowPlaying();
 
-		if(curIndex >= 0){
-		  curKey = chrome.extension.getBackgroundPage().song_storage.get_list()[curIndex];
-		  var url = "http://gdata.youtube.com/feeds/api/videos/" + curKey + "?v=2&alt=jsonc";
-	  	  var output;
-	  	  $.getJSON(url,function(json){
-	      	output=json.data.title;
-	      	$("#bigtitle").text(output);   
-	  	  });
+		var url = "http://gdata.youtube.com/feeds/api/videos/" + curKey + "?v=2&alt=jsonc";
+	  	var output;
+	  	$.getJSON(url,function(json){
+	      output=json.data.title;
+	      $("#bigtitle").text(output);
+	  	});
 
-	  	  for ( ii = 0; ii < chrome.extension.getBackgroundPage().song_storage.get_list().length; ii++){
-	  	  	if( ii == curIndex) {
-		  	  	$("#song"+ii).parent("td").parent("tr").css("background-color","#ddd");
-		  	}
-		  	else {
-		  		$("#song"+ii).parent("td").parent("tr").css("background-color","white");
-		  	}
-	  	  }
-		}
+	  	for ( ii = 0; ii < chrome.extension.getBackgroundPage().song_storage.get_list().length; ii++){
+	  	  key = chrome.extension.getBackgroundPage().song_storage.get_list()[ii];
+	  	  if( key == curKey) {
+		  	$("#song"+key).parent("td").parent("tr").css("background-color","#ddd");
+		  }
+		  else {
+		  	$("#song"+key).parent("td").parent("tr").css("background-color","white");
+		  }
+	  	}
 	}
 
 	update();

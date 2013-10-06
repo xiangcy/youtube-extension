@@ -9,7 +9,7 @@ var getTitle=function(key, song_div){
 };
 
 var construct_song_div = function (key, number){
-  var song_div = $('<tr><td><a class="key_field" href="#">' + key + '</a>' + '<a id="song' + number + '" class="title_field" href="#">' 
+  var song_div = $('<tr><td><a class="key_field" href="#">' + key + '</a>' + '<a id="song' + key + '" class="title_field" href="#">' 
           + '' + '</a><span class="icon-remove"></span></td></tr>');
   var title = getTitle(key, song_div);
   return song_div;
