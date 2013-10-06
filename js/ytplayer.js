@@ -23,7 +23,7 @@ function onYouTubeIframeAPIReady() {
 
 function onPlayerReady(event) { 
   if(song_storage.get_list().length > 0) {
-    player.loadVideoById(song_storage.get_list()[0]);
+    playSpec(0);
   } else {
     playVideo();
   }
